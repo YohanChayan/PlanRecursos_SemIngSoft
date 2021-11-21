@@ -37,6 +37,8 @@
                 </select>
             </div>
 
+            <x-jet-input id="id_sup" type="hidden" name="id_sup" value="0" />
+
             <div>
                 <x-jet-label for="address" value="{{ __('Dirección') }}" />
                 <x-jet-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')" required autofocus autocomplete="address" />

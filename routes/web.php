@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 use \App\http\Controllers\EmployeeController;
+use \App\http\Controllers\ChiefController;
+use \App\http\Controllers\ProjectController;
+use \App\http\Controllers\ReportController;
+use \App\http\Controllers\AsignedProjectController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,19 +36,21 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'role:admin', 'prefix' => 'adminR', 'as' => 'adminR.'], function() {
-        // Route::resource('jefemeseros', JefeMeseroController::class);
+        Route::resource('chiefs', ChiefController::class);
         // Route::resource('informes', DynamicPDFController::class);
 
     });
    Route::group(['middleware' => 'role:chief', 'prefix' => 'chiefR', 'as' => 'chiefR.'], function() {
         Route::resource('employees', EmployeeController::class);
+        Route::resource('projects', ProjectController::class);
+        Route::resource('reports', ReportController::class);
         // Route::resource('platillos', PlatilloController::class);
 
 
    });
 
    Route::group(['middleware' => 'role:employee', 'prefix' => 'employeeR', 'as' => 'employeeR.'], function() {
-    // Route::resource('meseros', MeseroController::class);
+    Route::resource('AsignedP', AsignedProjectController::class);
     // Route::resource('platillos', PlatilloController::class);
     
     });

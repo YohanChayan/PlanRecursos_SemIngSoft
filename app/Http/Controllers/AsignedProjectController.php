@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employee;
+use App\Models\AsignedProject;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\auth;
 
-class EmployeeController extends Controller
+class AsignedProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +14,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all()->where('role',2)->where('id_sup',auth()->user()->id);
-        return view('Employees.employeeIndex', compact('employees'));
+        return view("AsignedProject.AsignedProjectIndex");
     }
 
     /**
@@ -27,7 +24,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('Employees.employeeCreate');
+        //
     }
 
     /**
@@ -38,20 +35,16 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-        $pass = Hash::make($request['password']);
-        $request['password'] = $pass;
-        Employee::create($request->all());
-        return redirect()->route('chiefR.employees.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\AsignedProject  $asignedProject
      * @return \Illuminate\Http\Response
      */
-    public function show(Employee $employee)
+    public function show(AsignedProject $asignedProject)
     {
         //
     }
@@ -59,10 +52,10 @@ class EmployeeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\AsignedProject  $asignedProject
      * @return \Illuminate\Http\Response
      */
-    public function edit(Employee $employee)
+    public function edit(AsignedProject $asignedProject)
     {
         //
     }
@@ -71,10 +64,10 @@ class EmployeeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\AsignedProject  $asignedProject
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Employee $employee)
+    public function update(Request $request, AsignedProject $asignedProject)
     {
         //
     }
@@ -82,10 +75,10 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\AsignedProject  $asignedProject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Employee $employee)
+    public function destroy(AsignedProject $asignedProject)
     {
         //
     }

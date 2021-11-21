@@ -17,6 +17,14 @@
                     </x-jet-nav-link>
                 </div>
 
+                @if (auth()->user()->role == '0') 
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('adminR.chiefs.index') }}" :active="request()->routeIs('adminR.chiefs.index')">
+                            {{ __('Jefes de proyectos') }}
+                        </x-jet-nav-link>
+                    </div>
+                @endif
+
                 @if (auth()->user()->role == '1')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('chiefR.employees.index') }}" :active="request()->routeIs('chiefR.employees.index')">
@@ -25,14 +33,14 @@
                     </div>
 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('chiefR.employees.index') }}" :active="request()->routeIs('chiefR.employees.index')">
+                        <x-jet-nav-link href="{{ route('chiefR.projects.index') }}" :active="request()->routeIs('chiefR.projects.index')">
                             {{ __('Proyectos') }}
                         </x-jet-nav-link>
                     </div>
 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('chiefR.employees.index') }}" :active="request()->routeIs('chiefR.employees.index')">
-                            {{ __('Informes') }}
+                        <x-jet-nav-link href="{{ route('chiefR.reports.index') }}" :active="request()->routeIs('chiefR.reports.index')">
+                            {{ __('Reportes') }}
                         </x-jet-nav-link>
                     </div>
 
@@ -52,7 +60,7 @@
 
                 @if (auth()->user()->role == '2') 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('chiefR.employees.index') }}" :active="request()->routeIs('chiefR.employees.index')">
+                        <x-jet-nav-link href="{{ route('employeeR.AsignedP.index') }}" :active="request()->routeIs('employeeR.AsignedP.index')">
                             {{ __('Proyecto asignado') }}
                         </x-jet-nav-link>
                     </div>

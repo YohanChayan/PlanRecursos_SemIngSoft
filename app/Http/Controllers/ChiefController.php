@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employee;
+use App\Models\Chief;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\auth;
 
-class EmployeeController extends Controller
+class ChiefController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all()->where('role',2)->where('id_sup',auth()->user()->id);
-        return view('Employees.employeeIndex', compact('employees'));
+        $chiefs = Chief::all()->where('role',1)->where('id_sup',auth()->user()->id);
+        return view('Chiefs.chiefIndex', compact('chiefs'));
     }
 
     /**
@@ -27,7 +27,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('Employees.employeeCreate');
+        return view('Chiefs.chiefCreate');
     }
 
     /**
@@ -38,20 +38,19 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         $pass = Hash::make($request['password']);
         $request['password'] = $pass;
-        Employee::create($request->all());
-        return redirect()->route('chiefR.employees.index');
+        Chief::create($request->all());
+        return redirect()->route('adminR.chiefs.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\Chief  $chief
      * @return \Illuminate\Http\Response
      */
-    public function show(Employee $employee)
+    public function show(Chief $chief)
     {
         //
     }
@@ -59,10 +58,10 @@ class EmployeeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\Chief  $chief
      * @return \Illuminate\Http\Response
      */
-    public function edit(Employee $employee)
+    public function edit(Chief $chief)
     {
         //
     }
@@ -71,10 +70,10 @@ class EmployeeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\Chief  $chief
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Employee $employee)
+    public function update(Request $request, Chief $chief)
     {
         //
     }
@@ -82,10 +81,10 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Employee  $employee
+     * @param  \App\Models\Chief  $chief
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Employee $employee)
+    public function destroy(Chief $chief)
     {
         //
     }

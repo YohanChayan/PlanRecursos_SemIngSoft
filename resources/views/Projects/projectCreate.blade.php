@@ -18,12 +18,12 @@
     @csrf
     <div class="relative pt-4">
       <label for="name" class="text-base leading-7 text-blueGray-500">Nombre de proyecto</label>
-      <input required autofocus type="text" id="name" name="name" placeholder="Nombre" required value="{{ old('nombre') ?? $project->name ?? '' }}" class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg bg-gray-100 focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+      <input required autofocus type="text" id="name" name="name" minlength="5" placeholder="Nombre" required value="{{ old('nombre') ?? $project->name ?? '' }}" class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg bg-gray-100 focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
     </div>
 
     <div class="relative pt-4">
-      <label for="totalSurveys" class="text-base leading-7 text-blueGray-500">Demandas de encuestas </label>
-      <input required autofocus type="number" id="totalSurveys" name="totalSurveys" placeholder="Demanda de encuestas" required value="{{ old('totalSurveys') ?? $project->totalSurveys ?? '' }}" class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg bg-gray-100 focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+      <label for="totalSurveys"  class="text-base leading-7 text-blueGray-500">Demandas de encuestas </label>
+      <input required autofocus type="number" min="10" id="totalSurveys" name="totalSurveys" placeholder="Demanda de encuestas" required value="{{ old('totalSurveys') ?? $project->totalSurveys ?? '' }}" class="w-full px-4 py-2 mt-2 mr-4 text-base text-black transition duration-500 ease-in-out transform rounded-lg bg-gray-100 focus:border-blueGray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
     </div>
 
         

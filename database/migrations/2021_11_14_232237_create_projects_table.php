@@ -21,9 +21,6 @@ class CreateProjectsTable extends Migration
             $table->unsignedInteger('totalSurveys')->default(1);
             $table->unsignedInteger('surveysDone')->default(0);
             $table->boolean('status')->default(0);
-
-
-            
             $table->timestamps();
         });
     }

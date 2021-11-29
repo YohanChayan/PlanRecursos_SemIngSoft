@@ -12,6 +12,9 @@ class Project extends Model
     protected $fillable = [
         'name',
         'manager',
-        'id_chief'
+        'id_chief',
+        'totalSurveys',
+        'surveysDone',
+        'status',
     ];
 }

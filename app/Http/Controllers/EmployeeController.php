@@ -64,7 +64,7 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
-        //
+        return view('Employees.employeeCreate', compact('employee'));
     }
 
     /**
@@ -76,7 +76,8 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, Employee $employee)
     {
-        //
+        Employee::where('id', $employee->id)->update($request->except('_token','_method'));
+        return redirect()->route('chiefR.employees.index')->with('info','Empleado Modificado correctamente');
     }
 
     /**
@@ -87,6 +88,7 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        //
+        $employee->delete();
+        return redirect()->route('chiefR.employees.index')->with('success','Empleado eliminado correctamente');
     }
 }

@@ -63,7 +63,7 @@ class ChiefController extends Controller
      */
     public function edit(Chief $chief)
     {
-        //
+        return view('Chiefs.chiefCreate', compact('chief') );
     }
 
     /**
@@ -75,7 +75,8 @@ class ChiefController extends Controller
      */
     public function update(Request $request, Chief $chief)
     {
-        //
+        Chief::where('id', $chief->id)->update($request->except('_token','_method'));
+        return redirect()->route('adminR.chiefs.index')->with('info','Jefe de proyecto Modificado correctamente');
     }
 
     /**
@@ -86,6 +87,7 @@ class ChiefController extends Controller
      */
     public function destroy(Chief $chief)
     {
-        //
+        $chief->delete();
+        return redirect()->route('adminR.chiefs.index')->with('success','Jefe de proyecto eliminado correctamente');
     }
 }

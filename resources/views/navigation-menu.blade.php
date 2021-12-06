@@ -39,22 +39,22 @@
                     </div>
 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('chiefR.staff.index') }}" :active="request()->routeIs('chiefR.staff.index')">
+                            {{ __('Gestion personal') }}
+                        </x-jet-nav-link>
+                    </div>
+
+                    <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('chiefR.reports.index') }}" :active="request()->routeIs('chiefR.reports.index')">
                             {{ __('Reportes') }}
                         </x-jet-nav-link>
-                    </div>
+                    </div> -->
 
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('chiefR.employees.index') }}" :active="request()->routeIs('chiefR.employees.index')">
-                            {{ __('Gestionar personal') }}
-                        </x-jet-nav-link>
-                    </div>
-
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('chiefR.employees.index') }}" :active="request()->routeIs('chiefR.employees.index')">
                             {{ __('Retribuciones') }}
                         </x-jet-nav-link>
-                    </div>
+                    </div> -->
 
                 @endif
 
@@ -65,6 +65,12 @@
                         </x-jet-nav-link>
                     </div>
                 @endif
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('notifications.index') }}" :active="request()->routeIs('notifications.index')">
+                            {{ __('Notificationes') }}
+                        </x-jet-nav-link>
+                    </div>
                 
             </div>
 

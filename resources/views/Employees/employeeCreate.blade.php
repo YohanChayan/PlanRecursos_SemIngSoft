@@ -1,11 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Empleados') }}
+            {{ __('Nuevo empleado') }}
         </h2>
     </x-slot>
-    
-   <h1>Create Employee</h1>
 
    <link href="https://unpkg.com/tailwindcss@2.2.4/dist/tailwind.min.css" rel="stylesheet">
    

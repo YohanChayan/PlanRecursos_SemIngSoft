@@ -17,4 +17,9 @@ class Project extends Model
         'surveysDone',
         'status',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

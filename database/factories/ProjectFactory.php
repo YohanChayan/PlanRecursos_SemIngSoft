@@ -14,7 +14,7 @@ class ProjectFactory extends Factory
     public function definition()
     {
         $theName = $this->faker->name();
-        $pro = "-Project";
+        $pro = " - Proyecto";
 
         $totalSurveys = $this->faker->numberBetween($min = 300, $max = 1000);
         $surveysDone = $this->faker->numberBetween($min = 100, $max = $totalSurveys);

@@ -18,8 +18,9 @@ class AddRolesFieldsToUsersTable extends Migration
             $table->string('address')->constrained()->default();
             $table->string('phone_number')->constrained()->default();
             $table->unsignedBigInteger('id_sup')->default(0);
-            // $table->integer('employee_number')->unique()->default(random_int(100000, 999999));
             $table->boolean('status')->default(true);
+            $table->unsignedBigInteger('id_project')->default(0);
+            
         });
     }
 

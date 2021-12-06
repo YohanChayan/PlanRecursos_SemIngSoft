@@ -54,6 +54,15 @@
 							<input style="background-color: rgba(0,0,0,0); color: black; border: none; " type="submit" value="Eliminar">
 						</form>	
 					</button>
+
+					<button class="p-2 pl-5 pr-5 bg-gray-700 text-gray-100 font-bold py-1 px-2 border border-blue-500 rounded">
+						<a href="{{ route('chiefR.employees.assign', $employee->id) }}">
+						Asignar proyecto
+						</a>	
+					</button>
+
+					
+
 				</td>
 			</tr>
 			

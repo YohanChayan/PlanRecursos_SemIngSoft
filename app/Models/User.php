@@ -33,6 +33,7 @@ class User extends Authenticatable
         'id_sup',
         'employee_number',
         'status',
+        'id_project',
         
     ];
 
